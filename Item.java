@@ -3,19 +3,13 @@ public class Item {
     private String id_item;
     private String nama;
     private int jumlah;
+    private double harga;
 
-    public Item(String nama, int jumlah) {
+    public Item(String nama, int jumlah, double harga) {
         this.id_item = generateItemIdStatic();
         this.nama = nama;
         this.jumlah = jumlah;
-    }
-    
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public void setJumlah(int jumlah) {
-        this.jumlah = jumlah;
+        this.harga = harga;
     }
 
     public String getNama() {
@@ -26,16 +20,16 @@ public class Item {
         return this.jumlah;
     }
 
+    public double getHarga() {
+        return this.harga;
+    }
+
     public String getId() {
         return this.id_item;
     }
 
-    public void tampilItem() {
-        System.out.println(getNama() + "\t\t" + getJumlah());
-    }
-
     public void tampilDetailItem() {
-        System.out.println("ID\t\t\t:" + getId() + "\n" + "Nama Item\t:" + getNama() + "\n" +  "Jumlah\t\t:" + getJumlah());
+        System.out.println("ID\t\t:" + getId() + "\n" + "Nama Item\t:" + getNama() + "\n" +  "Jumlah\t\t:" + getJumlah());
     }
 
     public static String generateItemIdStatic() {
